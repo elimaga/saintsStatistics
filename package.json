@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Website for showing the statistics for Saints Baseball.",
   "scripts": {
-    "build": "node ./convertToJson.js",
+    "build": "node ./jsonConverter.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eli Magallanes",
