@@ -1,0 +1,14 @@
+{
+  "name": "saintsstatistics",
+  "version": "0.1.0",
+  "description": "Website for showing the statistics for Saints Baseball.",
+  "scripts": {
+    "build": "node ./convertToJson.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eli Magallanes",
+  "license": "MIT",
+  "dependencies": {
+    "convert-excel-to-json": "^1.6.1"
+  }
+}
