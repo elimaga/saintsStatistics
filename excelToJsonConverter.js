@@ -11,12 +11,20 @@ function convertToJson () {
     });
 }
 
+function generateFileString(jsonString) {
+    const declarationString = 'const stats = ';
+    let jsFileString = declarationString + jsonString + ';';
+    const exportString = '\n\nmodule.exports = stats;';
+    jsFileString += exportString;
+    return jsFileString;
+}
+
 function writeToFile () {
     const jsonObject = convertToJson();
     const jsonString = JSON.stringify(jsonObject);
-    let jsFileString = 'const stats = ' + jsonString + ';';
-    jsFileString += '\n\nmodule.exports = stats;';
-    fs.writeFile('stats.js', jsFileString, 'utf8', function(err) {
+    const jsFileString = generateFileString(jsonString);
+    const statsFile = 'stats.js';
+    fs.writeFile(statsFile, jsFileString, 'utf8', function(err) {
         if (err) {
             console.log('There was an error: ', err);
         }
