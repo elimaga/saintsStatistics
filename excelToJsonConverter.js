@@ -14,8 +14,10 @@ function convertToJson () {
 function writeToFile () {
     const jsonObject = convertToJson();
     const jsonString = JSON.stringify(jsonObject);
-    fs.writeFile('stats.json', jsonString, 'utf8', function(err) {
-        if (err){
+    let jsFileString = 'const stats = ' + jsonString + ';';
+    jsFileString += '\n\nmodule.exports = stats;';
+    fs.writeFile('stats.js', jsFileString, 'utf8', function(err) {
+        if (err) {
             console.log('There was an error: ', err);
         }
     });
