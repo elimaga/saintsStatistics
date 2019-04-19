@@ -26,7 +26,7 @@ function writeToFile () {
     const jsonObject = convertToJson();
     const jsonString = JSON.stringify(jsonObject);
     const jsFileString = generateFileString(jsonString);
-    const statsFile = 'stats.js';
+    const statsFile = 'js/stats.js';
     fs.writeFile(statsFile, jsFileString, 'utf8', function(err) {
         if (err) {
             console.log('There was an error: ', err);
