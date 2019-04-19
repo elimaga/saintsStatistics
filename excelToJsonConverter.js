@@ -5,6 +5,9 @@ const fs = require('fs');
 function convertToJson () {
     return excelToJson({
         sourceFile: 'Saints Stats.xlsx',
+        header: {
+            rows: 1
+        },
         columnToKey: {
             '*': '{{columnHeader}}'
         }
